@@ -592,43 +592,43 @@ var globalFunctions = {};
                 var downloadLinks;
 
                 switch (match[1]) {
-                    case '140':
-                        redistVersion = 'Visual Studio 2015, 2017 and 2019';
-                        downloadLinks = '<ul><li>' +
-                            'x86: <a href="https://aka.ms/vs/16/release/vc_redist.x86.exe">vc_redist.x86.exe</a>' +
-                            '</li><li>' +
-                            'x64: <a href="https://aka.ms/vs/16/release/vc_redist.x64.exe">vc_redist.x64.exe</a>' +
-                            '</li></ul>';
-                        break;
+                case '140':
+                    redistVersion = 'Visual Studio 2015, 2017 and 2019';
+                    downloadLinks = '<ul><li>' +
+                        'x86: <a href="https://aka.ms/vs/16/release/vc_redist.x86.exe">vc_redist.x86.exe</a>' +
+                        '</li><li>' +
+                        'x64: <a href="https://aka.ms/vs/16/release/vc_redist.x64.exe">vc_redist.x64.exe</a>' +
+                        '</li></ul>';
+                    break;
 
-                    case '120':
-                        redistVersion = 'Visual Studio 2013';
-                        downloadLinks = '<ul><li>' +
-                            'x86: <a href="https://aka.ms/highdpimfc2013x86enu">vcredist_x86.exe</a>' +
-                            '</li><li>' +
-                            'x64: <a href="https://aka.ms/highdpimfc2013x64enu">vcredist_x64.exe</a>' +
-                            '</li></ul>';
-                        break;
+                case '120':
+                    redistVersion = 'Visual Studio 2013';
+                    downloadLinks = '<ul><li>' +
+                        'x86: <a href="https://aka.ms/highdpimfc2013x86enu">vcredist_x86.exe</a>' +
+                        '</li><li>' +
+                        'x64: <a href="https://aka.ms/highdpimfc2013x64enu">vcredist_x64.exe</a>' +
+                        '</li></ul>';
+                    break;
 
-                    case '110':
-                        redistVersion = 'Visual Studio 2012';
-                        downloadLinks = '<a href="https://www.microsoft.com/en-us/download/details.aspx?id=30679" target="_blank" rel="noopener">Click here</a>, download and install both <strong>vcredist_x86.exe</strong> and <strong>vcredist_x64.exe</strong>.<br><br>';
-                        break;
+                case '110':
+                    redistVersion = 'Visual Studio 2012';
+                    downloadLinks = '<a href="https://www.microsoft.com/en-us/download/details.aspx?id=30679" target="_blank" rel="noopener">Click here</a>, download and install both <strong>vcredist_x86.exe</strong> and <strong>vcredist_x64.exe</strong>.<br><br>';
+                    break;
 
-                    case '100':
-                        redistVersion = 'Visual Studio 2010';
-                        downloadLinks = '<a href="https://www.microsoft.com/en-us/download/details.aspx?id=26999" target="_blank" rel="noopener">Click here</a>, download and install both <strong>vcredist_x86.exe</strong> and <strong>vcredist_x64.exe</strong>.<br><br>';
-                        break;
+                case '100':
+                    redistVersion = 'Visual Studio 2010';
+                    downloadLinks = '<a href="https://www.microsoft.com/en-us/download/details.aspx?id=26999" target="_blank" rel="noopener">Click here</a>, download and install both <strong>vcredist_x86.exe</strong> and <strong>vcredist_x64.exe</strong>.<br><br>';
+                    break;
 
-                    case '90':
-                        redistVersion = 'Visual Studio 2008';
-                        downloadLinks = '<a href="https://www.microsoft.com/en-us/download/details.aspx?id=26368" target="_blank" rel="noopener">Click here</a>, download and install both <strong>vcredist_x86.exe</strong> and <strong>vcredist_x64.exe</strong>.<br><br>';
-                        break;
+                case '90':
+                    redistVersion = 'Visual Studio 2008';
+                    downloadLinks = '<a href="https://www.microsoft.com/en-us/download/details.aspx?id=26368" target="_blank" rel="noopener">Click here</a>, download and install both <strong>vcredist_x86.exe</strong> and <strong>vcredist_x64.exe</strong>.<br><br>';
+                    break;
 
-                    case '80':
-                        redistVersion = 'Visual Studio 2005';
-                        downloadLinks = '<a href="https://www.microsoft.com/en-us/download/details.aspx?id=26347" target="_blank" rel="noopener">Click here</a>, download and install both <strong>vcredist_x86.EXE</strong> and <strong>vcredist_x64.EXE</strong>.<br><br>';
-                        break;
+                case '80':
+                    redistVersion = 'Visual Studio 2005';
+                    downloadLinks = '<a href="https://www.microsoft.com/en-us/download/details.aspx?id=26347" target="_blank" rel="noopener">Click here</a>, download and install both <strong>vcredist_x86.EXE</strong> and <strong>vcredist_x64.EXE</strong>.<br><br>';
+                    break;
                 }
 
                 var message = 'You\'re probably here because you got an error message similar to the following:<br><br>' +
@@ -885,17 +885,17 @@ var globalFunctions = {};
 
     function humanFileArch(arch) {
         switch (arch) {
-            case 332:
-                return 'x86';
+        case 332:
+            return 'x86';
 
-            case 34404:
-                return 'x64';
+        case 34404:
+            return 'x64';
 
-            case 452:
-                return 'ARM';
+        case 452:
+            return 'ARM';
 
-            case 43620:
-                return 'ARM64';
+        case 43620:
+            return 'ARM64';
         }
 
         return arch.toString();
