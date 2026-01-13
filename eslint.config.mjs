@@ -26,6 +26,7 @@ export default [
             "strict": ["error", "global"],
             "indent": ["error", 4],
             "no-unused-vars": ["error", { "args": "none", "caughtErrors": "none" }],
+            "no-undef": "error",
             "semi": "error"
         }
     }
