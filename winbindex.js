@@ -777,6 +777,8 @@ var globalFunctions = {};
                 var title = updateInfo.title
                     .replace(/^(\d{4}-\d{2} )?Cumulative Update Preview for /, '')
                     .replace(/^(\d{4}-\d{2} )?Cumulative Update for /, '')
+                    .replace(/^(\d{4}-\d{2} )?Security Update for /, '')
+                    .replace(/^(\d{4}-\d{2} )?Preview Update for /, '')
                     .replace(/^(\d{4}-\d{2} )?Feature update to /, '')
                     .replace(/^(\d{4}-\d{2} )?Update for /, '');
                 var windowsVersion = title;
