@@ -484,8 +484,14 @@ var globalFunctions = {};
 
         yadcf.init(filesTable, yadcfColumns);
 
+        var dataUrl = baseDataUrl + '/by_filename_compressed';
+        if (baseDataUrl === 'https://m417z.com/winbindex-data-insider') {
+            dataUrl += '/' + (djb2Hash(fileToLoad) & 0xFF).toString(16);
+        }
+        dataUrl += '/' + fileToLoad + '.json.gz';
+
         $.ajax({
-            url: baseDataUrl + '/by_filename_compressed/' + fileToLoad + '.json.gz',
+            url: dataUrl,
             // https://stackoverflow.com/a/17682424
             xhrFields: {
                 responseType: 'blob'
@@ -1124,5 +1130,13 @@ var globalFunctions = {};
             .replace(/>/g, '&gt;')
             .replace(/"/g, '&quot;')
             .replace(/'/g, '&#039;');
+    }
+
+    function djb2Hash(str) {
+        var hash = 5381;
+        for (var i = 0; i < str.length; i++) {
+            hash = ((hash << 5) + hash) + str.charCodeAt(i); /* hash * 33 + c */
+        }
+        return hash >>> 0;
     }
 })();
