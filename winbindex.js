@@ -486,7 +486,7 @@ var globalFunctions = {};
 
         var dataUrl = baseDataUrl + '/by_filename_compressed';
         if (baseDataUrl === 'https://m417z.com/winbindex-data-insider') {
-            dataUrl += '/' + (djb2Hash(fileToLoad) & 0xFF).toString(16);
+            dataUrl += '/' + (djb2Hash(fileToLoad) & 0xFF).toString(16).padStart(2, '0');
         }
         dataUrl += '/' + fileToLoad + '.json.gz';
 
