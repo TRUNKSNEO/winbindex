@@ -165,7 +165,16 @@ def extract_update_files(local_dir: Path, local_path: Path, windows_version: str
         # and old cab files fail to be extracted with the newer expand tool.
         expand = 'tools/expand/expand.exe' if windows_version.startswith('11-') else 'expand.exe'
         args = [expand, '-r', '-f:*', from_file, to_dir]
-        subprocess.check_call(args, stdout=None if config.verbose_run else subprocess.DEVNULL)
+        result = subprocess.call(args, stdout=None if config.verbose_run else subprocess.DEVNULL)
+        if result != 0:
+            if from_file.name == "Cab_1_for_KB5082198.cab":
+                # This specific file extraction fails with error 0x80070302
+                # (ERROR_CANTFETCHBACKWARDS). It seems that the single file that
+                # fails to be extracted is:
+                # amd64_microsoft-windows-c..iser-inboxdatafiles_31bf3856ad364e35_10.0.14393.9060_none_e74414373b76256e\appraiser.sdb
+                pass
+            else:
+                raise Exception(f'Failed to extract {from_file} with {expand}: exit code {result}')
 
     def run_7z_extract(from_file: Path, to_dir: Path):
         args = ['7z.exe', 'x', from_file, f'-o{to_dir}', '-y']
